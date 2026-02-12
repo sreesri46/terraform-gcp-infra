@@ -1,11 +1,11 @@
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
-
 module "compute" {
-  source         = "../../modules/compute"
-  instance_name  = "sandbox-vm1"
-  machine_type   = "e2-micro"
-  zone           = "us-central1-a"
+  source = "../../Module/Compute"
+
+  project_id     = var.project_id
+  region         = var.region
+  zone           = var.zone
+
+  instance_name  = var.instance_name
+  machine_type   = var.machine_type
+  labels         = var.labels
 }

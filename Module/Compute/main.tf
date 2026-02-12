@@ -1,18 +1,11 @@
-resource "google_compute_instance" "vm" {
-  name         = var.instance_name
-  machine_type = var.machine_type
-  zone         = var.zone
+module "compute" {
+  source = "../../Module/Compute"
 
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-11"
-    }
-  }
+  project_id     = var.project_id
+  region         = var.region
+  zone           = var.zone
 
-  network_interface {
-    network = "default"
-    access_config {}
-  }
-
-  labels = var.labels
+  instance_name  = var.instance_name
+  machine_type   = var.machine_type
+  labels         = var.labels
 }

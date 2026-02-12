@@ -5,7 +5,7 @@ provider "google" {
 
 module "compute" {
   source         = "../../modules/compute"
-  instance_name  = "sandbox-vm"
+  instance_name  = "sandbox-vm1"
   machine_type   = "e2-micro"
   zone           = "us-central1-a"
 }

@@ -13,4 +13,6 @@ resource "google_compute_instance" "vm" {
     network = "default"
     access_config {}
   }
+
+  labels = var.labels
 }
